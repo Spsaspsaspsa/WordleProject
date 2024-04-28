@@ -25,8 +25,6 @@ function setup() {
         playGame()
     })
 
-    background(250)
-
     if (document.cookie.length == 0) {
         document.cookie = generateToken(20)
     }
