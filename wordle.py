@@ -1,13 +1,13 @@
 WORD_LENGTH = 5
 
 
-def read_word_list(filename="word_list.tsv"):
+def read_word_list(filename: str = "word_list.tsv") -> list[str]:
     with open(filename, "r", encoding="utf-8") as f:
         lines = f.readlines()
     return [line.strip().split('\t')[0] for line in lines[1:]]
 
 
-def is_suitable(test, mark, word):
+def is_suitable(test: str, mark: str, word: str) -> bool:
     for i in range(WORD_LENGTH):
         if mark[i] == "1" and test[i] == word[i]:
             return False
@@ -32,7 +32,7 @@ def is_suitable(test, mark, word):
     return all(cnt == 0 for cnt in non_zero_letters.values())
 
 
-def play(word_list):
+def play(word_list: list[str]) -> None:
     while len(word_list) > 1:
         test = word_list[0]
         print("Я думаю, загаданное слово — ", test)
