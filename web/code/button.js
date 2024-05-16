@@ -1,44 +1,50 @@
-BUTTON_SIZE = 100
+let BUTTONS_NUMBER = 5;
+let buttons = [];
 
-GREEN = '#8bc34a'
-YELLOW = '#ffc107'
-GREY = '#A9A9A9'
+function generateToken(n) {
+    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    var token = '';
+    for (var i = 0; i < n; i++) {
+        token += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return token;
+}
 
-function Button(x, y) {
-    this.x = x;
-    this.y = y;
+let TOKEN = ''
 
-    this.current_color = 0;
+function setup() {
+    // createCanvas(window.innerWidth, window.innerHeight);
 
-    this.button = createButton('');
-	this.button.position(this.x - BUTTON_SIZE / 2 + 12, this.y + BUTTON_SIZE / 2 + 90)
-    this.button.size(BUTTON_SIZE, BUTTON_SIZE)
-    this.button.style('border', 'none');
-    this.button.style('background-color', GREY);
-    this.button.style('font-size', '60px');
-	this.button.style('border-radius', '10px')
+    for (var i = 0; i < BUTTONS_NUMBER; i += 1) {
+        buttons.push(new Button(window.innerWidth / 2 - ((BUTTONS_NUMBER - 1) / 2 - i) * (BUTTON_SIZE + 10), window.innerHeight / 2))
+    }
 
-    this.button.mouseClicked(() => {
-        this.changeColor()
-		
-	document.getElementById('button-container').appendChild(this.button)
-    });
+    let button = createButton('Отправить ответ')
+    button.position(window.innerWidth / 2 - button.width / 2, window.innerHeight / 2 + BUTTON_SIZE / 2 + 210)
+	button.style('border-radius', '5px')
+	button.style('border', 'none')
+	button.style('font-size', '16px');
+	button.style('font-family', 'Arial');
+	button.style('font-weight', 'bold')
+	button.style('background-color', GREEN);
+    button.mouseClicked(() => {
+        playGame()
+    })
 
-    this.setText = function (letter) {
-        this.button.elt.innerHTML = letter
-        this.current_color = 0
-        this.button.style('background-color', GREY);
-    };
+    if (document.cookie.length == 0) {
+        document.cookie = generateToken(20)
+    }
 
-    this.changeColor = function () {
-        this.current_color += 1
-        this.current_color %= 3
+    TOKEN = document.cookie
 
-        if (this.current_color == 0)
-            this.button.style('background-color', GREY);
-        else if (this.current_color == 1)
-            this.button.style('background-color', YELLOW);
-        else
-            this.button.style('background-color', GREEN);
-    };
+    restartGame()
+}
+
+function keyPressed(key) {
+    if (1 <= key.key && key.key <= BUTTONS_NUMBER) {
+        buttons[key.key - 1].changeColor();
+    }
+    if (key.key == 'Enter') {
+        playGame()
+    }
 }
