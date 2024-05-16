@@ -11,14 +11,17 @@ function Button(x, y) {
     this.current_color = 0;
 
     this.button = createButton('');
-    this.button.position(this.x - BUTTON_SIZE / 2, this.y - BUTTON_SIZE / 2)
+	this.button.position(this.x - BUTTON_SIZE / 2 + 12, this.y + BUTTON_SIZE / 2 + 90)
     this.button.size(BUTTON_SIZE, BUTTON_SIZE)
     this.button.style('border', 'none');
     this.button.style('background-color', GREY);
     this.button.style('font-size', '60px');
+	this.button.style('border-radius', '10px')
 
     this.button.mouseClicked(() => {
         this.changeColor()
+		
+	document.getElementById('button-container').appendChild(this.button)
     });
 
     this.setText = function (letter) {
