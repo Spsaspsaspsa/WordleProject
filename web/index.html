@@ -8,10 +8,52 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<main>
-</main>
-<script src="code/api.js"></script>
-<script src="code/button.js"></script>
-<script src="code/main.js"></script>
+    <main>
+        <div class="heading" id="words"></div>
+
+		<script>
+			const wordWithoutBox = "Решатель для ";
+			const wordWithBox = "WORDLE";
+
+			const colors = ['#8bc34a', '#A9A9A9', '#ffc107'];
+
+			const span = document.createElement('span');
+			span.textContent = wordWithoutBox;
+			document.getElementById('words').appendChild(span);
+		
+			wordWithBox.split('').forEach((letter) => {
+				const span = document.createElement('span');
+				span.textContent = letter;
+				const box = document.createElement('span');
+				box.textContent = letter;
+				box.className = 'letterInSquare';
+				box.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+				document.getElementById('words').appendChild(box);
+			});
+
+		</script>
+
+		<div >
+		<p class='textBaseBig'> Как это работает? </p>
+
+		<ol>
+			<li>Программа предложит некоторое слово </li>
+			<li>Каждую букву в слове необходимо раскрасить в один из трёх цветов:
+				<ul>
+					<li> если в загаданном слове этой буквы нет, оставьте её серой </li>
+					<li> если эта буква есть в загаданном слове, но на другом месте, выделите её жёлтым цветом, кликнув по ней 1 раз </li>
+					<li> если эта буква стоит в загаданном слове на том же месте, что и в слове, предложенном программой, выделите её зелёным цветом, кликнув по ней 2 раза </li>
+				</ul>
+			</li>
+			<li>Нажмите на кнопку «Отправить ответ» после проверки цветов всех букв </li>
+			<li>Игра будет продолжаться до тех пор, пока программа не угадает загаданное слово или не сдастся</li>
+		</ol>
+		</div>
+	<p class="textBaseSmall bottom-right"> пы.сы. что такое wordle можно посмотреть <a href="https://wordle.game/ru"> тут </a></p>
+    </main>
+	
+    <script src="code/api.js"></script>
+    <script src="code/button.js"></script>
+    <script src="code/main.js"></script>
 </body>
 </html>
