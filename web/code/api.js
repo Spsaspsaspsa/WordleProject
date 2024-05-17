@@ -1,4 +1,4 @@
-let API_URL = 'http://192.168.1.6:8001'
+let API_URL = 'http://127.0.0.1:8000'
 
 function restartGame() {
     loadJSON(API_URL + '/play?token=' + TOKEN, processRequest)
