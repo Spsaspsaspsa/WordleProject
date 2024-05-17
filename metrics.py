@@ -1,4 +1,3 @@
-import random
 import wordle
 import matplotlib.pyplot as plt
 
@@ -48,9 +47,9 @@ if __name__ == "__main__":
     #     d[n] = d.get(n, 0) + 1
     # print(d)
 
-    d1 = {1: 29, 2: 456, 3: 995, 4: 641, 5: 206, 6: 39, 7: 14} # если test = variants[0]
-    d2 = {3: 897, 4: 734, 2: 315, 5: 295, 1: 22, 6: 83, 7: 22, 8: 12} # если test = random.choice(variants)
-    d3 = {5: 620, 6: 338, 3: 454, 4: 640, 10: 4, 7: 123, 8: 34, 2: 137, 9: 15, 1: 15} # если test = variants[-1]
+    d1 = {1: 29, 2: 456, 3: 995, 4: 641, 5: 206, 6: 39, 7: 14}  # если test = variants[0]
+    d2 = {3: 897, 4: 734, 2: 315, 5: 295, 1: 22, 6: 83, 7: 22, 8: 12}  # если test = random.choice(variants)
+    d3 = {5: 620, 6: 338, 3: 454, 4: 640, 10: 4, 7: 123, 8: 34, 2: 137, 9: 15, 1: 15}  # если test = variants[-1]
 
     x = d1.keys()
     y = d1.values()
