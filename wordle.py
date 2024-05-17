@@ -14,8 +14,8 @@ def is_suitable(test: str, mark: str, word: str) -> bool:
         if mark[i] == "2" and test[i] != word[i]:
             return False
 
-    zero_letters = dict()
-    non_zero_letters = dict()
+    zero_letters = {}
+    non_zero_letters = {}
 
     for i in range(WORD_LENGTH):
         if mark[i] == '0':

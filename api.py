@@ -13,7 +13,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-database = dict()
+database = {}
 
 
 @app.get('/play')

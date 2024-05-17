@@ -1,13 +1,13 @@
-let BUTTONS_NUMBER = 5;
-let buttons = [];
+let BUTTONS_NUMBER = 5
+let buttons = []
 
 function generateToken(n) {
-    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    var token = '';
+    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    var token = ''
     for (var i = 0; i < n; i++) {
-        token += chars[Math.floor(Math.random() * chars.length)];
+        token += chars[Math.floor(Math.random() * chars.length)]
     }
-    return token;
+    return token
 }
 
 let TOKEN = ''
@@ -23,10 +23,10 @@ function setup() {
     button.position(window.innerWidth / 2 - button.width / 2, window.innerHeight / 2 + BUTTON_SIZE / 2 + 210)
 	button.style('border-radius', '5px')
 	button.style('border', 'none')
-	button.style('font-size', '16px');
-	button.style('font-family', 'Arial');
+	button.style('font-size', '16px')
+	button.style('font-family', 'Arial')
 	button.style('font-weight', 'bold')
-	button.style('background-color', GREEN);
+	button.style('background-color', GREEN)
     button.mouseClicked(() => {
         playGame()
     })
@@ -42,7 +42,7 @@ function setup() {
 
 function keyPressed(key) {
     if (1 <= key.key && key.key <= BUTTONS_NUMBER) {
-        buttons[key.key - 1].changeColor();
+        buttons[key.key - 1].changeColor()
     }
     if (key.key == 'Enter') {
         playGame()
