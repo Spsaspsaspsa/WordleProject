@@ -6,7 +6,11 @@
 
 ## Как запустить?
 
-### Windows, Командная строка:
+### Windows
+
+Нажимаете на горячие клавиши Windows + R, ищете cmd или powershell.
+
+### Командная строка (cmd):
 
 ```shell
 git clone https://github.com/Spsaspsaspsa/WordleProject.git
@@ -16,7 +20,7 @@ start "" python -m uvicorn api:app --reload
 start "" python -m http.server -d web 80 
 ```
 
-### Windows, Windows Powershell:
+### powershell :
 
 ```shell
 git clone https://github.com/Spsaspsaspsa/WordleProject.git
@@ -26,9 +30,11 @@ start python -ArgumentList "-m uvicorn api:app --reload"
 start python -ArgumentList " -m http.server -d web 80"
 ```
 
-Откройте по адресу [http://127.0.0.1](http://127.0.0.1)
+После открытия нового окошка переходите на старое и нажимаете Enter, должно открыться ещё одно окошко.
 
-## Структура репозитория
+Затем переходите по этой ссылке: [http://127.0.0.1](http://127.0.0.1)
+
+## Структура репозитория:
 
 - sorted_words.py — отбор пятибуквенных существительных из словаря частотных лемм русского языка, их сортировка по частотности букв и количеству уникальных букв
 - wordle_list.tsv — отсортированный список слов
