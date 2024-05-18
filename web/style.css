@@ -4,7 +4,7 @@ html {
 	background-position: center center;
 	background-attachment: fixed;
 	background-size: cover;
-	margin: 40px;
+	margin: 38px;
 	padding: 10px;
 }
 
@@ -12,15 +12,20 @@ canvas {
   display: block;
 }
 
+body {
+	50vh
+}
+
 .heading {
   font-family: 'Arial Black', sans-serif;
   font-size: 36px; 
-	border-radius: 5px;
+  border-radius: 5px;
 }
 
 .textBaseBig {
 	font-family: 'Arial Black', sans-serif;
-	font-size: 30px; 	
+	font-size: 30px; 
+	margin-top: 18px;
 }
 
 .textBaseSmall {
@@ -41,13 +46,14 @@ canvas {
 ol{
 	list-style-type: none;
 	counter-reset: number;
-	margin-left: -45px
+	margin-left: -45px;
+	margin-top: -19px
 }
 ol > li{
 	font-family: 'Arial', sans-serif;
 	font-size: 20px; 
 	font-weight: bold;
-	padding: 5px
+	padding: 5px;
 }
 ol > li:before {
 	display: inline-block;
