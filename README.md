@@ -6,7 +6,7 @@
 
 ## Как запустить?
 
-### Windows
+### Если у Вас Windows:
 
 Нажимаете на горячие клавиши Windows + R, ищете cmd или powershell.
 
@@ -20,19 +20,29 @@ start "" python -m uvicorn api:app --reload
 start "" python -m http.server -d web 80 
 ```
 
-### powershell :
+### Windows PowerShell :
 
 ```shell
 git clone https://github.com/Spsaspsaspsa/WordleProject.git
 cd WordleProject
 pip install -r requirements.txt
 start python -ArgumentList "-m uvicorn api:app --reload"
-start python -ArgumentList " -m http.server -d web 80"
+start python -ArgumentList "-m http.server -d web 80"
 ```
 
 После открытия нового окошка переходите на старое и нажимаете Enter, должно открыться ещё одно окошко.
 
-Затем переходите по этой ссылке: [http://127.0.0.1](http://127.0.0.1)
+Затем переходите по этой ссылке: [http://127.0.0.1](http://127.0.0.1).
+
+### Если у Вас MacOS или Linux:
+
+```shell
+git clone https://github.com/Spsaspsaspsa/WordleProject.git
+cd WordleProject
+pip install -r requirements.txt
+python -m uvicorn api:app --reload &
+python -m http.server -d web 80 &
+```
 
 ## Структура репозитория:
 
