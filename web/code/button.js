@@ -1,4 +1,4 @@
-BUTTON_SIZE = 100
+BUTTON_SIZE = 95
 
 GREEN = '#8bc34a'
 YELLOW = '#ffc107'
