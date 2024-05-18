@@ -10,7 +10,7 @@
 
 Нажимаете на горячие клавиши Windows + R, ищете cmd или powershell.
 
-### Командная строка (cmd):
+#### Командная строка (cmd):
 
 ```shell
 git clone https://github.com/Spsaspsaspsa/WordleProject.git
@@ -20,7 +20,7 @@ start "" python -m uvicorn api:app --reload
 start "" python -m http.server -d web 80 
 ```
 
-### Windows PowerShell :
+#### Windows PowerShell :
 
 ```shell
 git clone https://github.com/Spsaspsaspsa/WordleProject.git
