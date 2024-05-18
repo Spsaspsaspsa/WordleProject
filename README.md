@@ -6,7 +6,7 @@
 
 ## Как запустить?
 
-### Windows:
+### Windows, Командная строка:
 
 ```shell
 git clone https://github.com/Spsaspsaspsa/WordleProject.git
@@ -14,6 +14,16 @@ cd WordleProject
 pip install -r requirements.txt
 start "" python -m uvicorn api:app --reload 
 start "" python -m http.server -d web 80 
+```
+
+### Windows, Windows Powershell:
+
+```shell
+git clone https://github.com/Spsaspsaspsa/WordleProject.git
+cd WordleProject
+pip install -r requirements.txt
+start python -ArgumentList "-m uvicorn api:app --reload"
+start python -ArgumentList " -m http.server -d web 80"
 ```
 
 Откройте по адресу [http://127.0.0.1](http://127.0.0.1)
